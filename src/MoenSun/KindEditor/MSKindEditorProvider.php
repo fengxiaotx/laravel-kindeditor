@@ -14,7 +14,7 @@ use Illuminate\Support\ServiceProvider;
 
 class MSKindEditorProvider extends ServiceProvider
 {
-
+	protected $defer = false;
 	/**
 	 * Register the service provider.
 	 *
@@ -27,17 +27,18 @@ class MSKindEditorProvider extends ServiceProvider
 	}
 
 	public function boot(){
-		$configPath = __DIR__."/../../../config/mskindeditor.php";
-
-		$this->publishes([$configPath => $this->getConfigPath()],'config');
 
 		$routeConfig = [
 			'namespace' => 'MoenSun\KindEditor\Controllers',
 		];
 
 		$this->getRouter()->group($routeConfig,function($router){
-			$router->any('mslaravel-kindeditor',["uses"=>"Controller@kindeditor"]);
+			$router->any(config("mskindeditor.kindeditorUrl"),["uses"=>"Controller@kindeditor"]);
 		});
+
+		$configPath = __DIR__."/../../../config/mskindeditor.php";
+
+		$this->publishes([$configPath => $this->getConfigPath()],'config');
 	}
 
 	protected function getRouter()
