@@ -7,5 +7,5 @@
  * Time: 16:48
  */
 return [
-	"kindeditorUrl"=> "mslaravel-kindeditor"
+	"kindeditorUrl"=> "kindeditor/upload_json"
 ];
