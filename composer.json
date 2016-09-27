@@ -9,7 +9,12 @@
         }
     ],
     "minimum-stability": "dev",
-    "require": {},
+    "require": {
+        "php": ">=5.5.9"
+    },
+    "require-dev": {
+        "laravel/framework": "5.2.*"
+    },
     "autoload":{
         "psr-4":{
             "MoenSun\\KindEditor\\":"src/MoenSun/KindEditor/"
