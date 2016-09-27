@@ -33,7 +33,7 @@ class MSKindEditorProvider extends ServiceProvider
 		];
 
 		$this->getRouter()->group($routeConfig,function($router){
-			$router->any(config("mskindeditor.kindeditorUrl"),["uses"=>"Controller@kindeditor"]);
+			$router->any(config("mskindeditor.uploadJson"),["uses"=>"Controller@kindeditor"]);
 		});
 
 		$configPath = __DIR__."/../../../config/mskindeditor.php";

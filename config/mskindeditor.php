@@ -7,5 +7,5 @@
  * Time: 16:48
  */
 return [
-	"kindeditorUrl"=> "kindeditor/upload_json"
+	"uploadJson"=> "kindeditor/upload_json"
 ];
